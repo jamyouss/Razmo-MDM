@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "raleway";
+  src: url("../fonts/raleway_thin.otf");
+}
+
+@font-face {
+  font-family: "Sawasdee";
+  src: url("../fonts/Sawasdee.ttf");
+}
+
+
+html,
+body
+{
+  height: 100%;
+  min-height: 100%;
+}
+
+body
+{
+  background-color: #eee;
+  position: relative;
+}
+
+.fullscreen_bg
+{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url('../img/bg.jpg');
+  z-index: 0;
+}
+
+#errors
+{
+  position: relative;
+  width: 600px;
+  height: 170px;
+  margin: auto;
+  padding-top: 30px;
+  z-index: 2
+}
+
+.bootstrap-select
+{
+  margin-bottom: 0 !important;
+}
+
+#error,
+#timed
+{
+  display: none;
+  width: 600px;
+}
+
+.alert
+{
+  width: 600px;
+  margin: auto;
+  font-size: 12px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.alert .close
+{
+  font-size: 18px;
+  right: 0;
+}
+
+#login
+{
+  position: relative;
+  margin: 0 auto 0 auto;
+  width: 250px;
+  font-size: 10px;
+  font-family: arial;
+}
+
+#login table tr,
+#login table tr td
+{
+  border: 0;
+}
+
+#login table tr td
+{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#login input[type=text]:focus,
+#login input[type=password]:focus
+{
+  border-color: #acacac;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 5px rgba(73,73,73,0.6)
+}
+
+#login button[type=submit] span
+{
+  right: 10px;
+  top: 3px;
+}
+
+#clock
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  color: #ffffff;
+  font-family: "Sawasdee", "Droid Sans", sans-serif;
+  font-size: 16px;
+  text-shadow: 0 -1px 3px rgba(0, 0, 0, .3), 0 1px 2px rgba(255, 255, 255, .5);
+  font-weight: 100;
+}
+
+.actions
+{
+  position: absolute;
+  padding: 20px;
+}
+
+.actions.bottom-right
+{
+  bottom: 0;
+  right: 0;
+}
+
+.actions.top-left
+{
+  top: 0;
+  left: 0;
+}
+
+.actions a
+{
+  background: none;
+  border: none;
+  box-shadow: none;
+  height: 30px;
+}
+
+#xdmcp,
+#xdmcp span
+{
+  font-size: 20px;
+}
+
+.modal .modal-dialog
+{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.modal .modal-header
+{
+  padding: 10px;
+}
+
+.modal .modal-footer
+{
+  margin-top: 0;
+  padding: 10px;
+}
+
+.modal .modal-footer button
+{
+  font-size: 12px;
+}
+
+.modal .modal-content
+{
+  height: auto !important;
+}
+
+.modal .modal-body
+{
+  padding: 30px;
+  height: 100%;
+  font-size: 13px;
+}
+
+#sessions .modal-dialog,
+#languages .modal-dialog
+{
+  width: 280px;
+}
+
+.selectpicker .flag
+{
+  margin-right: 8px;
+}
