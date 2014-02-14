@@ -197,3 +197,9 @@ body
 {
   margin-right: 8px;
 }
+
+.bootbox .modal-dialog
+{
+  position: relative;
+  margin-top: 100px !important;
+}

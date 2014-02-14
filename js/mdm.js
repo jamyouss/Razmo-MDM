@@ -107,9 +107,18 @@ function init()
 	init_languages_modal();
 
 	$('.actions a').tooltip();
-	$("#suspend").attr('href', "javascript:alert('FORCE-SUSPEND###')");
-	$("#restart").attr('href', "javascript:alert('FORCE-RESTART###')");
-	$("#shutdown").attr('href', "javascript:alert('FORCE-SHUTDOWN###')");
+
+	$("#suspend, #restart, #shutdown").bind('click', function(event){
+		event.preventDefault();
+		var self = $(this);
+
+		bootbox.confirm("Are you sure?", function(result) {
+			if (result == true)
+			{
+				//alert(self.data("target"));
+			}
+		});
+	});
 
 	$("#session").bind('click', function(event){
 		event.preventDefault();
@@ -130,6 +139,12 @@ function init()
 		}
  	});
 
+	$("#usernames-list").bind("change", function(event){
+		event.preventDefault();
+
+		var username = $(this).val();
+		alert("USER###"+username.val());
+	});
 
  	$("#login button[type=submit]").bind('click', function(event){
 		event.preventDefault();
@@ -149,11 +164,9 @@ function init()
 
 function send_login()
 {
-	var username = $('#usernames-list option:selected');
 	var password = $("#login input[name=password]");
 
 	mdm_disable();
-	alert("USER###"+username.val());
 	alert("LOGIN###"+password.val());
 }
 
