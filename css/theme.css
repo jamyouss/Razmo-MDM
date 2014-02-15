@@ -179,3 +179,8 @@ body
   position: relative;
   margin-top: 100px !important;
 }
+
+.bootbox
+{
+  overflow-y: auto;
+}
