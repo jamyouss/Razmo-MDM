@@ -49,13 +49,13 @@ function center_languages_modal()
 // Called by MDM to disable user input
 function mdm_disable()
 {
-	$('#login').find('input, button').attr('disabled', 'disabled');
+	$('#login').find('input').attr('disabled', 'disabled');
 }
 
 // Called by MDM to enable user input
 function mdm_enable()
 {
-	$('#login').find('input, button').removeAttr('disabled');
+	$('#login').find('input').removeAttr('disabled');
 }
 
 // Called by MDM to update the clock
@@ -107,6 +107,7 @@ function init()
 	init_languages_modal();
 
 	$('.actions a').tooltip();
+	$("#login button[type=submit]").attr('disabled', 'disabled');
 
 	$("#suspend, #restart, #shutdown").bind('click', function(event){
 		event.preventDefault();
@@ -135,7 +136,7 @@ function init()
 		if (event.keyCode == 13)
 		{
 			event.preventDefault();
-			send_login();
+			send_password();
 		}
  	});
 
@@ -143,12 +144,30 @@ function init()
 		event.preventDefault();
 
 		var username = $(this).val();
-		alert("USER###"+username.val());
+		if (username)
+		{
+			alert("USER###"+username);
+		}
+	});
+
+	$("#login input[name=password]").bind("keyup", function(event){
+
+		var username = $("#usernames-list").val();
+		var password = $(this).val();
+
+		if ((username.length > 0) && (password.length > 0))
+		{
+			$("#login button[type=submit]").removeAttr('disabled');
+		}
+		else
+		{
+			$("#login button[type=submit]").attr('disabled', 'disabled');
+		}
 	});
 
  	$("#login button[type=submit]").bind('click', function(event){
 		event.preventDefault();
-		send_login();
+		send_password();
 	});
 
  	$(window).resize(function(){
@@ -162,7 +181,7 @@ function init()
  	});
 }
 
-function send_login()
+function send_password()
 {
 	var password = $("#login input[name=password]");
 
