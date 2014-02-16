@@ -115,7 +115,7 @@ function init()
 		bootbox.confirm("Are you sure?", function(result) {
 			if (result == true)
 			{
-				//alert(self.data("target"));
+				alert(self.data("target"));
 			}
 		});
 	});
