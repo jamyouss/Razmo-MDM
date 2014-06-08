@@ -260,7 +260,12 @@ function display_language_modal()
 // Called by MDM to add a user to the list of users
 function mdm_add_user(username, gecos, status)
 {
-	$('#usernames-list').append("<option value='"+username+"'>"+username+"</option>").selectpicker('refresh');
+	$('#usernames-list').append("<option value='"+username+"'>"+gecos+"</option>").selectpicker('refresh');
+}
+
+function mdm_set_current_user(username) {
+    $('#usernames-list').val(username).selectpicker('refresh');
+    $('input[name=password]').focus()
 }
 
 // Called by MDM to add a session to the list of sessions
