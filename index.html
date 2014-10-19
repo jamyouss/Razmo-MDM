@@ -12,11 +12,11 @@
 		<div id="fullscreen_bg" class="fullscreen_bg"></div>
 
 		<div class="actions top-left">
-			<a href="#" id="session" tabindex="4" data-toggle="tooltip" data-placement="bottom" data-title="Session" class="btn btn-primary btn-small">
+			<a href="#" id="session" tabindex="5" data-toggle="tooltip" data-placement="bottom" data-title="Session" class="btn btn-primary btn-small">
 				<span class="glyphicon glyphicon-cog"></span>
 			</a>
 
-			<a href="#" id="language" tabindex="5" data-toggle="tooltip" data-placement="bottom" data-title="Language" class="btn btn-primary btn-small">
+			<a href="#" id="language" tabindex="6" data-toggle="tooltip" data-placement="bottom" data-title="Language" class="btn btn-primary btn-small">
 				<span class="glyphicon glyphicon-flag"></span>
 			</a>
 
@@ -29,9 +29,12 @@
 				<tbody>
 					<tr>
 						<td>
-							<select id="usernames-list" name="username" title="Username" data-width="250px">
-								<option value="">Select user…</option>
-							</select>
+                                                        <div class="input-group">
+							        <span class="input-group-addon">
+							                <span class="glyphicon glyphicon-user"></span>
+							        </span>
+							        <input id="usernames-list" name="username" tabindex="2" class="form-control span4" placeholder="Username" autofocus="true"/>
+						        </div>
 						</td>
 					</tr>
 					<tr>
@@ -40,13 +43,13 @@
 							  	<span class="input-group-addon">
 							  		<span class="glyphicon glyphicon-lock"></span>
 							  	</span>
-							  	<input name="password" type="password" tabindex="2" class="form-control span4" placeholder="Password"/>
+							        <input name="password" type="password" tabindex="3" class="form-control span4" placeholder="Password"/>
 							</div>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<button type="submit" tabindex="3" name="submit" class="btn btn-info btn-block">Login <span class="glyphicon glyphicon-circle-arrow-right pull-right"></span></button>
+							<button type="submit" tabindex="4" name="submit" class="btn btn-info btn-block">Login <span class="glyphicon glyphicon-circle-arrow-right pull-right"></span></button>
 						</td>
 					</tr>
 				</tbody>
