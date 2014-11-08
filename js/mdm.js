@@ -265,7 +265,7 @@ function mdm_add_user(username, gecos, status)
 
 function mdm_set_current_user(username) {
     $('#usernames-list').val(username).selectpicker('refresh');
-    $('input[name=password]').focus()
+    $('input[name=usernames-list]').focus()
 }
 
 // Called by MDM to add a session to the list of sessions
