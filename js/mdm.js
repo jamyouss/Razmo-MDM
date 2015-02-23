@@ -23,6 +23,7 @@ var alert_template = '<div class="alert alert-danger"> \
 
 jQuery(document).ready(function(){
 	init();
+	$('input[type=password]').hideShowPassword(false, true);
 });
 
 function center_login_box()
