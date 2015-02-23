@@ -1,83 +1,84 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
-		<link href="css/bootstrap-select.min.css" rel="stylesheet" media="screen">
-		<link href="css/theme.css" rel="stylesheet">
-		<link href="css/flags.css" rel="stylesheet">
-	</head>
-	<body>
-		<div id="fullscreen_bg" class="fullscreen_bg"></div>
+<head>
+	<meta charset="utf-8">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-select.min.css" rel="stylesheet" media="screen">
+	<link href="css/hideShowPassword.wink.css" rel="stylesheet" media="screen">
+	<link href="css/theme.css" rel="stylesheet">
+	<link href="css/flags.css" rel="stylesheet">
+</head>
+<body>
+	<div id="fullscreen_bg" class="fullscreen_bg"></div>
 
-		<div class="actions top-left">
-			<a href="#" id="session" tabindex="5" data-toggle="tooltip" data-placement="bottom" data-title="Session" class="btn btn-primary btn-small">
-				<span class="glyphicon glyphicon-cog"></span>
-			</a>
+	<div class="actions top-left">
+		<a href="#" id="session" tabindex="5" data-toggle="tooltip" data-placement="bottom" data-title="Session" class="btn btn-primary btn-small">
+			<span class="glyphicon glyphicon-cog"></span>
+		</a>
 
-			<a href="#" id="language" tabindex="6" data-toggle="tooltip" data-placement="bottom" data-title="Language" class="btn btn-primary btn-small">
-				<span class="glyphicon glyphicon-flag"></span>
-			</a>
+		<a href="#" id="language" tabindex="6" data-toggle="tooltip" data-placement="bottom" data-title="Language" class="btn btn-primary btn-small">
+			<span class="glyphicon glyphicon-flag"></span>
+		</a>
+	</div>
 
-		</div>
+	<div id="errors"></div>
 
-		<div id="errors"></div>
+	<div id="login">
+		<table class="table">
+			<tbody>
+				<tr>
+					<td>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-user"></span>
+							</span>
+							<input id="usernames-list" name="username" tabindex="2" class="form-control span4" placeholder="Username" autofocus="true"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-lock"></span>
+							</span>
+							<input name="password" type="password" tabindex="3" class="form-control span4" placeholder="Password"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit" tabindex="4" name="submit" class="btn btn-info btn-block">Login <span class="glyphicon glyphicon-circle-arrow-right pull-right"></span></button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
-		<div id="login">
-			<table class="table">
-				<tbody>
-					<tr>
-						<td>
-                                                        <div class="input-group">
-							        <span class="input-group-addon">
-							                <span class="glyphicon glyphicon-user"></span>
-							        </span>
-							        <input id="usernames-list" name="username" tabindex="2" class="form-control span4" placeholder="Username" autofocus="true"/>
-						        </div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="input-group">
-							  	<span class="input-group-addon">
-							  		<span class="glyphicon glyphicon-lock"></span>
-							  	</span>
-							        <input name="password" type="password" tabindex="3" class="form-control span4" placeholder="Password"/>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button type="submit" tabindex="4" name="submit" class="btn btn-info btn-block">Login <span class="glyphicon glyphicon-circle-arrow-right pull-right"></span></button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+	<div class="actions bottom-right">
+		<!-- <a href="#" id="xdmcp" tabindex="6" data-toggle="tooltip" data-placement="top" data-title="Xdmcp" class="btn btn-primary btn-small">
+			<span class="glyphicon glyphicon-cloud"></span>
+		</a> -->
 
-		<div class="actions bottom-right">
-			<!-- <a href="#" id="xdmcp" tabindex="6" data-toggle="tooltip" data-placement="top" data-title="Xdmcp" class="btn btn-primary btn-small">
-				<span class="glyphicon glyphicon-cloud"></span>
-			</a> -->
+		<a href="#" id="suspend" data-target="FORCE-SUSPEND###" tabindex="7" data-toggle="tooltip" data-placement="top" data-title="$suspend" class="btn btn-primary btn-small">
+			<span class="glyphicon glyphicon-refresh"></span>
+		</a>
 
-			<a href="#" id="suspend" data-target="FORCE-SUSPEND###" tabindex="7" data-toggle="tooltip" data-placement="top" data-title="$suspend" class="btn btn-primary btn-small">
-				<span class="glyphicon glyphicon-refresh"></span>
-			</a>
+		<a href="#" id="restart" data-target="FORCE-RESTART###" tabindex="8" data-toggle="tooltip" data-placement="top" data-title="$restart" class="btn btn-primary btn-small">
+			<span class="glyphicon glyphicon-repeat"></span>
+		</a>
 
-			<a href="#" id="restart" data-target="FORCE-RESTART###" tabindex="8" data-toggle="tooltip" data-placement="top" data-title="$restart" class="btn btn-primary btn-small">
-				<span class="glyphicon glyphicon-repeat"></span>
-			</a>
+		<a href="#" id="shutdown" data-target="FORCE-SHUTDOWN###" tabindex="9" data-toggle="tooltip" data-placement="top" data-title="$shutdown" class="btn btn-primary btn-small">
+			<span class="glyphicon glyphicon-off"></span>
+		</a>
+	</div>
 
-			<a href="#" id="shutdown" data-target="FORCE-SHUTDOWN###" tabindex="9" data-toggle="tooltip" data-placement="top" data-title="$shutdown" class="btn btn-primary btn-small">
-				<span class="glyphicon glyphicon-off"></span>
-			</a>
-		</div>
-
-		<script src="js/jquery-1.10.2.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/bootstrap-select.min.js"></script>
-		<script src="js/bootbox.min.js"></script>
-		<script src="js/mdm.js"></script>
-	</body>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootbox.min.js"></script>
+	<script src="js/hideShowPassword.min.js"></script>
+	<script src="js/mdm.js"></script>
+</body>
 </html>
